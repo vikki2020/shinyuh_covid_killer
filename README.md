@@ -167,7 +167,7 @@ Les éléments suivants sont créés dans la div `#app` via JavaScript:
   - la page se vide entièrement
   - un message indique "La commande a bien été enregistrée..."
 
-### Bonus (pas compté dans les points - peut réhausser la note finale):
+### Bonus (pas compté dans les points - peut réhausser la note finale)
 
 - sur cet écran final, un bouton "Annuler la commande" permet de recharger automatiquement la page dans son état initial
 - le bouton "classer les vaccins par prix" fonctionne, et réordonne les cartes du vaccin le moins cher au plus cher

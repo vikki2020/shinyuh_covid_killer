@@ -118,10 +118,17 @@ function renderOrder() {
 // event delegation to renderOrder() to new page, and back to website when clicking the back btn
 document.body.addEventListener('click', (e) => {
   if (e.target.matches('.order')) {
-    // console.log(e.target);
+    console.log(e.target);
     renderOrder();
   } else if (e.target.matches('.back')) {
-    // console.log(e.target);
+    console.log(e.target);
     render();
   }
 });
+
+// not solved bugs:
+// 1)the all vaccine btn can be displayed only once..
+// 2)the basket can only be added when the website is reloaded,
+// if I click on the btn to show the validated vaccines or the btn to place the order
+// (which all include the render()function in the event delegation conditions),
+// the basket stays empty even I reserve the vaccines.
