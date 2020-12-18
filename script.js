@@ -5,11 +5,12 @@ console.log(vaccines);
 const app = document.getElementById('app');
 const title = '<header><h1 >COVID-KILLER</h1>';
 const btnPrice = '<button type="button" class="btn btn-all">show the vaccines by descending price</button>';
-const btnValidVac = '<button type="button" class="btn btn-recent">validated vaccines only</button></header>';
-
-let container = '<main class="card-columns">';
-for (const vac of vaccines) {
-  container += `
+const btnValidVac = '<button type="button" class="btn btn-recent btn-valid-vac">validated vaccines only</button></header>';
+function render() {
+  app.innerHTML = '';
+  let container = '<main class="card-columns">';
+  for (const vac of vaccines) {
+    container += `
   <div class="card" style="width: 18rem;">
     <img src="${vac.Image}" style="" class="card-img-top" alt="...">
     <div class="card-body" id="${vac.Id}">
@@ -19,7 +20,7 @@ for (const vac of vaccines) {
     <p class="card-text">Technology:${vac.Technologie}</p>
 
 <p class="card-text">Quantity:${vac.Quantite}</p>
-   <p class="card-text">Price:${vac.Prix_unitaire}</p>
+   <p class="card-text">Price(USD):${vac.Prix_unitaire}</p>
     <p  class="card-text">Validation:${vac.Approuve}</p>
     <form action="">
     <label for="amount">amount:</label>
@@ -33,8 +34,8 @@ for (const vac of vaccines) {
     </div>
   </div>
   `;
-}
-const foot = `
+  }
+  const foot = `
 <footer>
   <div class="basket__title">
       <i class="fas fa-shopping-basket"></i>
@@ -46,6 +47,28 @@ const foot = `
 </footer>
 `;
 
-const endContainer = '</main>';
-app.innerHTML += title + btnPrice + btnValidVac
+  const endContainer = '</main>';
+  app.innerHTML += title + btnPrice + btnValidVac
   + container + endContainer + foot;
+}
+render();
+// to display validated vaccines only, then change to show all vaccine
+
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('.btn-valid-vac')) {
+    const allVac = app.querySelectorAll('.card');
+    // console.log(allVac);
+    for (let i = 0; i < vaccines.length; i++) {
+      if (vaccines[i].Approuve === false) {
+        console.log(vaccines[i].Approuve);
+        allVac[i].style.display = 'none';
+        e.target.classList.add('btn-all-vac');
+        e.target.classList.remove('btn-valid-vac');
+      }
+    }
+  } else if (e.target.matches('.btn-all-vac')) {
+    render();
+    e.target.classList.remove('btn-all-vac');
+    e.target.classList.add('btn-valid-vac');
+  }
+});
