@@ -57,7 +57,7 @@ function render() {
 render();// execute render
 
 // to display validated vaccines only, then change to show all vaccine with render()
-
+const btnVac = document.querySelector('.btn-valid-vac');
 document.body.addEventListener('click', (e) => {
   if (e.target.matches('.btn-valid-vac')) {
     const allVac = app.querySelectorAll('.card');
@@ -66,6 +66,7 @@ document.body.addEventListener('click', (e) => {
       if (vaccines[i].Approuve === false) {
         console.log(vaccines[i].Approuve);
         allVac[i].style.display = 'none';
+        btnVac.innerHTML = 'All vaccines';// only shows one time,need to modify
         e.target.classList.add('btn-all-vac');
         e.target.classList.remove('btn-valid-vac');
       }
@@ -74,6 +75,7 @@ document.body.addEventListener('click', (e) => {
     render();
     e.target.classList.remove('btn-all-vac');
     e.target.classList.add('btn-valid-vac');
+    // btnVac.innerHTML = '<span>validated vaccines only</span>';
   }
 });
 // reserve vaccines to backet
@@ -102,3 +104,24 @@ document.body.addEventListener('click', (e) => {
 // When a user clicks on "place order" in the footer:20mins
 // the page is completely empty
 // a message indicates "The order has been registered ..."
+
+// create a function to render the new page with a message displayed
+function renderOrder() {
+  app.innerHTML = '';
+  let newContainer = '<div class="new">';
+  newContainer += '<p>THANK YOU!</br> your order has been registered,</br> please be patient and wait for another <span class="red">180</span> days.</p></br><a href="#" class="btn btn-primary back">back to website</a></div>';
+  app.innerHTML += newContainer;
+}
+// to test whether the renderOrder()works
+// renderOrder();
+
+// event delegation to renderOrder() to new page, and back to website when clicking the back btn
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('.order')) {
+    // console.log(e.target);
+    renderOrder();
+  } else if (e.target.matches('.back')) {
+    // console.log(e.target);
+    render();
+  }
+});
