@@ -72,3 +72,22 @@ document.body.addEventListener('click', (e) => {
     e.target.classList.add('btn-valid-vac');
   }
 });
+
+let count = 0;
+const titleBasket = document.querySelector('.basket__title');
+const contentBasket = document.querySelector('.basket__content');
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('.reserve')) {
+    const { id } = e.target.parentNode.parentNode;
+    console.log(id);
+    count += 1;
+    titleBasket.innerHTML = `
+        <i class="fas fa-shopping-basket"></i>
+        <span>View your basket (${count})</span>
+    `;
+    contentBasket.innerHTML += `
+        <div class="borrowedBook"><a href="#">${vaccines[id].Nom} </a>
+        </div>
+    `;
+  }
+});
