@@ -29,7 +29,7 @@ function render() {
     <label for="amount">amount:</label>
     <input type="number" id="amount" name="amount" value="">
     <p></p>
-    <a href="#" class="btn btn-primary reserve">reserve</a>
+    <a href="#" id="reserveBtn" class="btn btn-primary reserve">reserve</a>
   </form>
    
      
@@ -79,12 +79,13 @@ document.body.addEventListener('click', (e) => {
   }
 });
 // reserve vaccines to backet
-// working on add the specified value of each vaccine to backet 20mins
-// then set the input to none 20mins
-// disable the reserve btn 15mins
+// working on add the specified value of each vaccine to backet
+// then set the input to none
+// disable the reserve btn 10mins
 let count = 0;
 const titleBasket = document.querySelector('.basket__title');
 const contentBasket = document.querySelector('.basket__content');
+const reserve = document.getElementById('amount').value;// try to get the user input number...still working on it.
 document.body.addEventListener('click', (e) => {
   if (e.target.matches('.reserve')) {
     const { id } = e.target.parentNode.parentNode;
@@ -98,10 +99,11 @@ document.body.addEventListener('click', (e) => {
         <div class="borrowedBook"><a href="#">${vaccines[id].Nom} </a>
         </div>
     `;
+    document.getElementById('reserveBtn').disabled = true;// disable after clicking on reserve btn,working on it..
   }
 });
 
-// When a user clicks on "place order" in the footer:20mins
+// When a user clicks on "place order" in the footer:
 // the page is completely empty
 // a message indicates "The order has been registered ..."
 
@@ -132,3 +134,4 @@ document.body.addEventListener('click', (e) => {
 // if I click on the btn to show the validated vaccines or the btn to place the order
 // (which all include the render()function in the event delegation conditions),
 // the basket stays empty even I reserve the vaccines.
+// 3)still working on 2nd part of dynamic exercises ;(..
