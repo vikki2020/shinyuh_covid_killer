@@ -1,11 +1,14 @@
 import './styles.scss';
 import { vaccines } from './src/data';
 
-console.log(vaccines);
+console.log(vaccines);// check the data is well stored.
 const app = document.getElementById('app');
+
+// create html elements
 const title = '<header><h1 >COVID-KILLER</h1>';
 const btnPrice = '<button type="button" class="btn btn-all">show the vaccines by descending price</button>';
 const btnValidVac = '<button type="button" class="btn btn-recent btn-valid-vac">validated vaccines only</button></header>';
+// put the html elements in render function
 function render() {
   app.innerHTML = '';
   let container = '<main class="card-columns">';
@@ -51,8 +54,9 @@ function render() {
   app.innerHTML += title + btnPrice + btnValidVac
   + container + endContainer + foot;
 }
-render();
-// to display validated vaccines only, then change to show all vaccine
+render();// execute render
+
+// to display validated vaccines only, then change to show all vaccine with render()
 
 document.body.addEventListener('click', (e) => {
   if (e.target.matches('.btn-valid-vac')) {
@@ -72,7 +76,10 @@ document.body.addEventListener('click', (e) => {
     e.target.classList.add('btn-valid-vac');
   }
 });
-
+// reserve vaccines to backet
+// working on add the specified value of each vaccine to backet 20mins
+// then set the input to none 20mins
+// disable the reserve btn 15mins
 let count = 0;
 const titleBasket = document.querySelector('.basket__title');
 const contentBasket = document.querySelector('.basket__content');
@@ -91,3 +98,7 @@ document.body.addEventListener('click', (e) => {
     `;
   }
 });
+
+// When a user clicks on "place order" in the footer:20mins
+// the page is completely empty
+// a message indicates "The order has been registered ..."
