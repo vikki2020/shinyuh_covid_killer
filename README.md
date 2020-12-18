@@ -51,9 +51,14 @@ Vous pouvez répondre à même ce document ou dans un fichier à part.
 - Pourquoi peut-on dire que JavaScript est un langage "multi-paradigmes" ? **(s)**
 - A:Because it supports different programming types, such as imperative/procedural programming, Object-Oriented Programming(including prototypal inheritance),and fuctional programming.
 - En JS, une fonction peut-elle retourner une fonction ?
+- A:YES. It's very common for any js code. Functions are the first citizens in JS. They are the same data as numbers or strings, so functions can be passed to other functions as arguments, as well as returned from functions.
 - Est-ce que `alert` existe en Node.JS ?
+- A:No,alert does not exist in NodeJS.
+  In any case,alert is window's property object , only provided by the browser.That's why we sould not use alert in Node JS.
 - Est-ce que `window.console.log === console.log` dans le navigateur ?
+- A:YES. In the browser,console.log(console.log==window.console.log) // true. But console.log can be used even in Node or other environment, window.console.log can only be used in the browser.
 - Quel est votre aspect préféré de JavaScript ? **(s)**
+- I find JS is easier to get start compare to other typed languages. And it's very dynamic and can be applied to various projects. I would like to learn more about JS and it's framework in the upcoming months (though sometimes it's also not easy to understand).
 
 ## Épreuve pratique sur 80pts
 
