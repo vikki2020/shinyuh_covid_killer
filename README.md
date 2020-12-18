@@ -1,11 +1,13 @@
 # Covid Killer
 
 ## Infos
+
 Décembre 2020
 
 JavaScript: Epreuve pratique en 7h
 
 Répartition sur 100 pts
+
 - épreuve théorique: 20 pts
 - épreuve pratique:
   - qualité du code: 20 pts
@@ -13,17 +15,18 @@ Répartition sur 100 pts
   - javascript dynamique (interactions utilisateur): 30 pts
 
 ## Consignes
-*Toutes sources d'information autorisées, mais pas de communication interpersonnelles pendant l'épreuve. L'aspect individuel/unique de la résolution des questions et du problème fait partie de la note.*
 
-*Deux langues autorisées: français, anglais.*
+_Toutes sources d'information autorisées, mais pas de communication interpersonnelles pendant l'épreuve. L'aspect individuel/unique de la résolution des questions et du problème fait partie de la note._
 
-*Copier/coller de code d'internet sanctionnés.*
+_Deux langues autorisées: français, anglais._
 
-*Pas le droit de toucher au HTML. Tout le site est généré depuis le JavaScript. Par contre on peut changer le SCSS.*
+_Copier/coller de code d'internet sanctionnés._
 
-*Frameworks/Librairies de SPA non autorisés (Angular, React, Vue, Jquery...).*
+_Pas le droit de toucher au HTML. Tout le site est généré depuis le JavaScript. Par contre on peut changer le SCSS._
 
-*Les questions au formateur à propos des consignes ou liées aux problèmes techniques sont autorisées.*
+_Frameworks/Librairies de SPA non autorisés (Angular, React, Vue, Jquery...)._
+
+_Les questions au formateur à propos des consignes ou liées aux problèmes techniques sont autorisées._
 
 - Envoyez votre travail aux formateurs (ltruchot) via un lien vers un repo github AVANT 16h45 le 18/12/2020
 - Ne touchez plus jamais à ce repo après 16h45 sous peine de malus important
@@ -36,17 +39,24 @@ Les réponses peuvent être subjectives si il y a le signe **(s)** à la fin de 
 Vous pouvez répondre à même ce document ou dans un fichier à part.
 
 - Qu'est-ce que JavaScript vanilla ?
+- A:it's a light,rapid,cross-platform JS framework.We can create applications with Vanilla using plain JS, without importing other JS libraries(such as JQuery).
 - Qu'est-ce qu'AJAX ?
+- A:AJAX stands for 'Asynchronous Javascript and XML', it's a technique that allow us to create fast and dynamic webpages.AJAX help us to get the data from the server, and passes it to our browser without having to reload the webpage.
 - Pourquoi JavaScript est parfois mal-aimé des devs ? **(s)**
+- A:Because though it looks easy to start and create dynamic script rapidly, sometimes the freedom of manipulating the codes can make it become very hard to understand for the co-workers.
 - Y a-t-il des types en JavaScript ? Si oui, lesquels ?
+- A:yes, there are 6 data types in JS. They're string, number, boolean,null, undefined, and symbol(since ECMAScript 2015).
 - Est-ce que SASS est un langage qui est interprété par les navigateurs ?
+- A: YES. It's a preprocessor scripting language which interpreted or compiled into Cascading Style Sheets (CSS).That's why we only link css in html file ,but actually we edite the style in scss.
 - Pourquoi peut-on dire que JavaScript est un langage "multi-paradigmes" ? **(s)**
+- A:Because it supports different programming types, such as imperative/procedural programming, Object-Oriented Programming(including prototypal inheritance),and fuctional programming.
 - En JS, une fonction peut-elle retourner une fonction ?
 - Est-ce que `alert` existe en Node.JS ?
 - Est-ce que `window.console.log === console.log` dans le navigateur ?
 - Quel est votre aspect préféré de JavaScript ? **(s)**
 
 ## Épreuve pratique sur 80pts
+
 Vous êtes codeuse/codeur JavaScript dans une clinique du centre-ville.
 Vous développez un outil de pré-commande de vaccins dans les stocks publics de la ville, pour les responsables d'équipes médicales.
 Votre site doit permettre à ces personnes de réserver différents types de vaccins parmi ceux en cours de développement.
@@ -62,71 +72,87 @@ Le script `./script.js` est déjà lié à la page `./index.html` grâce à Parc
 - add, commit, et push réguliers sont recommandés
 
 ### Modéliser les données
+
 Produire un fichier data.js dans `./src`, qui exporte un Array d'objets avec les data suivantes:
+
 #### Vaccin 1
+
 Nom: BBIBP-CorV  
 Inventeurs: Sinopharm  
 Lieux de production: Chine  
 Technologie: virus inactivé  
 Quantité: 420  
 Prix unitaire: 17$  
-Approuvé: oui  
+Approuvé: oui
+
 #### Vaccin 2
+
 Nom: Sputnik V  
 Inventeurs: Gamaleya  
 Lieux de production: Russie, Inde  
 Technologie: adenovirus  
 Quantité: 130  
 Prix unitaire: 12$  
-Approuvé: non  
+Approuvé: non
+
 #### Vaccin 3
+
 Nom: AZD1222  
 Inventeurs: AstraZeneca, University of Oxford  
 Lieux de production: Royaume Unis, Brésil, Inde  
 Technologie: adenovirus  
 Quantité: 5028  
 Prix unitaire: 1.78$  
-Approuvé: non  
+Approuvé: non
+
 #### Vaccin 4
+
 Nom: Tozinameran  
 Inventeurs: BioNTech, Pfizer, Fosun Pharma  
 Lieux de production: Allemagne, USA  
 Technologie: ARN messager  
 Quantité: 980  
 Prix unitaire: 14$  
-Approuvé: oui  
+Approuvé: oui
+
 #### Vaccin 5
+
 Nom: mRNA-1273  
 Inventeurs: Moderna, NIAID, BARDA  
 Lieux de production: USA  
 Technologie: ARN messager  
 Quantité: 240  
 Prix unitaire: 28$  
-Approuvé: non  
+Approuvé: non
+
 #### Vaccin 6
+
 Nom: Ad26.COV2.S  
 Inventeurs: Johnson & Johnson, BIDMC  
 Lieux de production: USA, Amérique du Sud, Ukraine, Afrique du Sud  
 Technologie: adenovirus  
 Quantité: 110  
 Prix unitaire: 31$  
-Approuvé: non  
+Approuvé: non
 
 ### Transformer les données en éléments du DOM
+
 Les éléments suivants sont créés dans la div `#app` via JavaScript:
+
 - un `h1` avec le nom du site
-- un élément `header`, présentant 
+- un élément `header`, présentant
   - un bouton pour classer les vaccins par prix
-  - un bouton pour cacher les vaccins "non approuvés" 
-- un élément HTML `main`. 
+  - un bouton pour cacher les vaccins "non approuvés"
+- un élément HTML `main`.
   - c'est le catalogue montrant tous les vaccins sous forme de "cartes", côte à côte ou à la ligne
-  - chaque carte présente 
+  - chaque carte présente
     - une image de vaccin (présente dans le dossier "static")
     - toutes les infos disponibles pour ce vaccin
     - un "input" de "quantité" et un bouton "réserver" à côté
 - un élément `footer` résume la commande en cours (vide au début), et contient un bouton "passer la commande"
 
 ### Manipulation du DOM et interaction utilisateur
+
 - Lorsque l'utilisateur clique sur "cacher les vaccins non approuvés" les vaccins non approuvés sont cachés. On peut désormais les re-montrer grâce au même bouton
 - Lorsqu'un utilisateur clique sur le bouton "réserver" d'une carte de vaccin
   - le vaccin apparaît dans la commande du `footer`, avec la quantité demandée (ex: Tozinameran x3)
@@ -137,7 +163,8 @@ Les éléments suivants sont créés dans la div `#app` via JavaScript:
   - un message indique "La commande a bien été enregistrée..."
 
 ### Bonus (pas compté dans les points - peut réhausser la note finale):
-- sur cet écran final, un bouton "Annuler la commande" permet de  recharger automatiquement la page dans son état initial
+
+- sur cet écran final, un bouton "Annuler la commande" permet de recharger automatiquement la page dans son état initial
 - le bouton "classer les vaccins par prix" fonctionne, et réordonne les cartes du vaccin le moins cher au plus cher
 - Améliorer l'affichage de votre site grâce aux SCSS
 - L'action de passer commande lorsqu'il n'y a pas de commande est impossible
