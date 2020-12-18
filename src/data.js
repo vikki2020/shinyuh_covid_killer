@@ -1,6 +1,7 @@
 export const vaccines = [
   {
-    id: 0,
+    Id: 0,
+    Image: 'bbibp-corv.jpg',
     Nom: 'BBIBP-CorV ',
     Inventeurs: 'Sinopharm',
     Lieux_de_production: 'Chine',
@@ -10,7 +11,8 @@ export const vaccines = [
     Approuve: true,
   },
   {
-    id: 1,
+    Id: 1,
+    Image: 'sputnik-v.jpg',
     Nom: 'Sputnik V ',
     Inventeurs: 'Gamaleya',
     Lieux_de_production: ['Russie', 'Inde'],
@@ -20,7 +22,8 @@ export const vaccines = [
     Approuve: false,
   },
   {
-    id: 2,
+    Id: 2,
+    Image: 'azd1222.jpg',
     Nom: 'AZD1222  ',
     Inventeurs: ['AstraZeneca', 'University of Oxford '],
     Lieux_de_production: ['Royaume Unis', 'Brésil', 'Inde'],
@@ -30,7 +33,8 @@ export const vaccines = [
     Approuve: false,
   },
   {
-    id: 3,
+    Id: 3,
+    Image: 'tozinameran.jpg',
     Nom: 'Tozinameran ',
     Inventeurs: ['BioNTech', ' Pfizer', 'Fosun Pharma  '],
     Lieux_de_production: ['Allemagne', 'USA'],
@@ -41,9 +45,10 @@ export const vaccines = [
 
   },
   {
-    id: 4,
+    Id: 4,
+    Image: 'mrna-1273.jpg',
     Nom: 'mRNA-1273 ',
-    Inventeurs: ['Moderna', 'NIAID', 'BARDA'],
+    Inventeurs: ['Moderna', 'NIAId', 'BARDA'],
     Lieux_de_production: 'USA',
     Technologie: 'ARN messager',
     Quantite: 240,
@@ -51,7 +56,8 @@ export const vaccines = [
     Approuve: false,
   },
   {
-    id: 5,
+    Id: 5,
+    Image: 'ad26-cov2-s.jpg',
     Nom: 'Ad26.COV2.S ',
     Inventeurs: ['Johnson & Johnson', 'BIDMC'],
     Lieux_de_production: ['USA', 'Amérique du Sud', 'Ukraine', 'Afrique du Sud'],
